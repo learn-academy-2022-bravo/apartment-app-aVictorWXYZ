@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import { Nav, NavItem } from 'reactstrap'
 
 class Header extends Component {
@@ -14,9 +15,15 @@ class Header extends Component {
     console.log("current_user:", current_user)
     return (
       <>
-        <h1>React in Rails with Devise</h1>
+
         <Nav>
-          {logged_in &&
+         {  <NavItem>
+              <NavLink to="/">
+              <h1>Will replace with logo, link to home</h1>
+              </NavLink>    
+            </NavItem>
+          }
+        {logged_in &&
             <NavItem>
               <a href={sign_out_route} className="nav-link">Sign Out</a>
             </NavItem>
